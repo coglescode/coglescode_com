@@ -1,0 +1,36 @@
+{% extends "portfolio/layout.html" %}
+{% load static %}
+
+{% block content %}
+  {% for user in profile %}
+    <p>{{user.descr}}</p>
+    <h1>{{user.intro_line}}</h1>
+    <p><img src="{{ user.avatar.url }}" alt="{{ user.name}}"></p>
+    <p><img src="{{ user.cert.url }}" alt="{{ user.cert}}"></p>    
+  {% endfor %}
+
+  <div class="project_list">
+    <h1>My Projects</h1>
+    {% if my_projects %}
+      <ul>
+        {% for project in my_projects %}
+          <li>
+            <a >{{ project.title}}</a>
+            <p>{{project.descr}}</p>
+          </li>          
+        {% endfor %}  
+      </ul>
+    {% else %}
+      <h1>Hire me now </h1>
+    {% endif%}
+  </div>
+
+  <div class="contact_form">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }} 
+      <input type="submit" value="Send">
+    </form>
+  </div>
+  
+{% endblock %}

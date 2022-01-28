@@ -1,0 +1,14 @@
+{% extends "portfolio/layout.html" %}
+{% load static %}
+
+
+{% block content %}
+  <div class="contact_form">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }} 
+      <input type="email" value="Send">
+    </form>
+  </div>
+  
+{% endblock %}
