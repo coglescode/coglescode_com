@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,14 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open(os.path.join(BASE_DIR, 'llave_segura.txt')) as f:
+"""with open(os.path.join(BASE_DIR, 'llave_segura.txt')) as f:
         SECRET_KEY = f.read().strip()
-
+"""
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True #config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['coglescode.com', 'www.coglescode.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -130,13 +133,25 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+"""
 # HTTPS Settings in setting.py
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+
+SECURE_SSL_REDIRECT = False
+
 
 # HSTS Settings
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_SECONDS = 31563000
 SECURE_HSTS_RELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+"""
+# Bottom of the file
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+RECIPIENT_ADDRESS = env('RECIPIENT_ADDRESS')
