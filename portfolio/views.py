@@ -25,27 +25,14 @@ class IndexView(FormView):
             # 'form': ContactFormView(),
         })
         return context
-
-    """def form_valid(self, form):
-        message = "{name} / {email} said: ".format(
-            name=form.cleaned_data.get('name'),
-            email=form.cleaned_data.get('email'))
-        message += "\n\n{0}".format(form.cleaned_data.get('msg'))
-        send_mail(
-            subject=form.cleaned_data.get('subject').strip(),
-            message=message,
-            from_email='contact-form@myapp.com',
-            recipient_list=[settings.LIST_OF_EMAIL_RECIPIENTS],
-        )"""
-
+    
     def form_valid(self, form):
-        form.send_email(
-            name,
-            subject,
-            msg,
-            ['kingcogles@gmail.com']
-        )
+        form.send()
         return super().form_valid(form)
+    
+    
+
+    
 
 
 """class ContactFormView(FormView, View):
