@@ -1,36 +1,99 @@
 {% extends "portfolio/layout.html" %}
 {% load static %}
 
+
+
 {% block content %}
-  {% for user in profile %}
-    <p>{{user.descr}}</p>
-    <h1>{{user.intro_line}}</h1>
-    <p><img src="{{ user.avatar.url }}" alt="{{ user.name}}"></p>
-    <p><img src="{{ user.cert.url }}" alt="{{ user.cert}}"></p>    
-  {% endfor %}
+  <div id="bio" class="container">
+    {% for user in profile %}
+      <div class="row d-flex justify-content-center ">        
+        <div id="avatar_div" class=" col-8 col-md-6 col-xl-4  d-flex justify-content-center align-items-center p-4 ">
+          <img class="img-fluid avatar" src="{{ user.avatar.url }}" alt="{{ user.name}}" width="800" height="600" >
+        </div>
+        <div id="bio_div" class="col-md-6 d-flex  flex-column justify-content-center p-3"> 
+          <h1 class="col-12  text-center h4">{{user.intro_line}}</h1>
+          <h1  id="userName" class="col-12 display-4 text-center p-2 p-xl-0 my-xl-2">{{user.name}}</h1>
+          <p class="col-12 lead">{{user.descr}}</p>         
+        </div>
+      </div>
+      
+      <div class="row d-flex justify-content-center ">
+        <div id="cert_div" class="col-7 col-md-6 col-xl-3 d-flex justify-content-center p-4 p-md-5 ">
+          <img id="cert" class="img-thumbnail shadow rounded " src="{{ user.cert.url }}" alt="{{ user.cert}}">    
+        </div>  
 
-  <div class="project_list">
-    <h1>My Projects</h1>
-    {% if my_projects %}
-      <ul>
+        <div id="contact_links" class="col-md-6 col-xl-7 d-flex flex-wrap justify-content-around align-items-center ">
+          <div class="col-8 d-flex justify-content-between m-3 m-md-0 px-xl-5 "> 
+            <a href="https://www.instagram.com/coglescode/"><i class="bi bi-instagram"></i></a>
+            <a href="https://github.com/coglescode"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/leonard-cogles-bonne-243142107/"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <div class="col-12 d-flex justify-content-center justify-content-xl-center ">
+            <a id="connect_btn" class="btn btn-danger my-4 fs-2 p-4 shadow" href="https://www.linkedin.com/in/leonard-cogles-bonne-243142107/" role="link">Connect with me</a>
+          </div>
+        </div>
+      </div>    
+    {% endfor %}
+  </div>
+
+  <div id="project_list" class="container-fluid d-flex flex-wrap justify-content-center">  
+    <div class="col-12 text-center h1 mt-5">My Projects</div>
+    {% if my_projects %}      
         {% for project in my_projects %}
-          <li>
-            <a >{{ project.title}}</a>
-            <p>{{project.descr}}</p>
-          </li>          
-        {% endfor %}  
-      </ul>
+          <div class="col-8 ">
+            <a class="text-light text-decoration-none" href="https://github.com/coglescode/coglescode_com">
+              <img class="img-fluid rounded shadow-lg text-decoration-none" src="{{project.img.url}}">
+              <h2 class="text-center my-3 ">{{project.title}}</h2>
+              <p class="text-center ">{{project.descr}}</p>
+            </a>
+          </div>
+        {% endfor %}       
     {% else %}
-      <h1>Hire me now </h1>
-    {% endif%}
+      <div class="py-4 justify-content-center ">
+        <p class="h3 p-3">This portfolio is my first project online. More will come.</p>
+      </div>
+    {% endif %}
   </div>
 
-  <div class="contact_form">
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }} 
-      <input type="submit" value="Send">
-    </form>
+  <!-- Contact Section -->
+
+  <div class="container">
+    <div class="row justify-content-center  ">
+      <div class=" col-md-6 col-xl-5  ">        
+        <div class="text-center text-md-start my-4 h1">Contact</div>
+        <p class="mx-2 m-xl-0 text-md-start h5">Let's get your idea come true or just say hello.</p>        
+        <div id="contact_links" class="d-flex flex-wrap justify-content-around justify-content-xl-start  my-5">
+          <a href="https://www.instagram.com/coglescode/"><i class="bi bi-instagram"></i></a>
+          <a class="mx-xl-5" href="https://github.com/coglescode"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/leonard-cogles-bonne-243142107/"><i class="bi bi-linkedin"></i></a>
+        </div>        
+        <div class="row  justify-content-start gy-2 px-3 p-xl-0 my-3">
+          <div class="col-md-12 h6 ">
+            <i class="bi bi-envelope-fill fs-4"><span class="p-2">cogles_bonne@yahoo.com</span></i>
+          </div>  
+          <div class=" col-md-12 h6 ">
+            <i class="bi bi-phone-fill fs-4 "><span class="p-2">(+46)790133284</span></i>
+          </div>
+        </div>
+      </div>  
+
+      <div class="col-md-6 col-xl-5 contact_form  p-md-5 ">
+        <form  method="post">
+          {% csrf_token %}
+          {{ form.as_p }} 
+          <input class="col-12 btn btn-lg btn-primary shadow  my-3" type="submit" value="Send">
+        </form>
+      </div>
+
+      
+    </div>
+  </div>  
+
+  <div class="container">
+    <div class="row">                 
+      <footer class="col-12 text-center  align-items-center p-3 ">
+        <h6>coglescode 2022</h6>
+      </footer>         
+    </div>
   </div>
-  
 {% endblock %}
