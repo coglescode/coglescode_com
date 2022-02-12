@@ -2,6 +2,7 @@ from django import forms
 from django.forms import ModelForm, fields
 from .models import Contact
 from django.conf import settings 
+from django.core.mail import send_mail
 
 # Contact form
 class ContactForm(ModelForm): 
