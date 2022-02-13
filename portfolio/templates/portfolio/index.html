@@ -7,10 +7,10 @@
   <div id="bio" class="container">
     {% for user in profile %}
       <div class="row d-flex justify-content-center ">        
-        <div id="avatar_div" class=" col-8 col-md-6 col-xl-4  d-flex justify-content-center align-items-center p-4 ">
+        <div id="avatar_div" class=" col-8 col-md-6 col-xl-4  d-flex justify-content-center align-items-center p-4 btn-danger">
           <img class="img-fluid avatar" src="{{ user.avatar.url }}" alt="{{ user.name}}" width="800" height="600" >
         </div>
-        <div id="bio_div" class="col-md-6 d-flex  flex-column justify-content-center p-3"> 
+        <div id="bio_div" class="col-md-6 d-flex  flex-column justify-content-center p-3 bg-success"> 
           <h1 class="col-12  text-center h4">{{user.intro_line}}</h1>
           <h1  id="userName" class="col-12 display-4 text-center p-2 p-xl-0 my-xl-2">{{user.name}}</h1>
           <p class="col-12 lead">{{user.descr}}</p>         
@@ -18,11 +18,11 @@
       </div>
       
       <div class="row d-flex justify-content-center ">
-        <div id="cert_div" class="col-7 col-md-6 col-xl-3 d-flex justify-content-center p-4 p-md-5 ">
+        <div id="cert_div" class="col-7 col-md-6 col-xl-4 d-flex justify-content-center p-4 p-md-5 bg-dark">
           <img id="cert" class="img-thumbnail shadow rounded " src="{{ user.cert.url }}" alt="{{ user.cert}}">    
         </div>  
 
-        <div id="contact_links" class="col-md-6 col-xl-7 d-flex flex-wrap justify-content-around align-items-center ">
+        <div id="contact_links" class="col-md-6 col-xl-6 d-flex flex-wrap justify-content-around align-items-center bg-warning">
           <div class="col-8 d-flex justify-content-between m-3 m-md-0 px-xl-5 "> 
             <a href="https://www.instagram.com/coglescode/"><i class="bi bi-instagram"></i></a>
             <a href="https://github.com/coglescode"><i class="bi bi-github"></i></a>

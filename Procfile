@@ -1,0 +1,1 @@
+web: gunicorn coglescode_com.wsgi
