@@ -15,8 +15,8 @@ from decouple import config
 import os
 import json
 
-# with open('/home/coglescode/coglescode_com/config.json') as config_file:
-#        config = json.load(config_file)
+#with open('/etc/config.json') as config_file:
+#       config = json.load(config_file)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
