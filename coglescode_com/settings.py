@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from decouple import config
-import json
+import os
+
 
 #with open('/etc/config.json') as config_file:
 #       config = json.load(config_file)
