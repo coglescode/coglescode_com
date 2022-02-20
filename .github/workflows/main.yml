@@ -37,6 +37,7 @@ jobs:
           remote_path: /home/coglescode/coglescode_com          
           script: |
             sh reload_nginx.sh
+            ls -al
             
             # sftp args
           args: '-o ConnectTimeout=5'
