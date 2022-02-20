@@ -36,7 +36,7 @@ jobs:
           # files will copy to under remote_path
           remote_path: /home/coglescode/coglescode_com          
           
-           # sftp args
+          # sftp args
           args: '-o ConnectTimeout=5'
 
     - uses: actions/checkout@v2
