@@ -11,9 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-import os 
 from decouple import config
-
+import os 
 
 #with open('/etc/config.json') as config_file:
 #       config = json.load(config_file)
@@ -31,8 +30,8 @@ SECRET_KEY = config('SECRET_KEY')
 #SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
+#DEBUG = config('DEBUG', default=False, cast=bool)
 
 
 ALLOWED_HOSTS = ['127.0.0.1','coglescode.com', 'www.coglescode.com']
@@ -147,7 +146,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+"""
 # HTTPS Settings in setting.py
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
@@ -158,7 +157,7 @@ SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_SECONDS = 31563000
 SECURE_HSTS_RELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-
+"""
 
 # Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
