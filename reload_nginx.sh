@@ -1,1 +1,1 @@
-sudo systemctl reload nginx
+sudo systemctl restart nginx.service
