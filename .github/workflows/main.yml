@@ -35,11 +35,8 @@ jobs:
           local_path: ./* # default is ./*
           # files will copy to under remote_path
           remote_path: /home/coglescode/coglescode_com          
-          script: |
-            sh reload_nginx.sh
-            ls -al
-            
-            # sftp args
+          
+           # sftp args
           args: '-o ConnectTimeout=5'
 
     - uses: actions/checkout@v2
@@ -57,6 +54,8 @@ jobs:
     - name: Collect Static
       run: |
         python manage.py collectstatic --noinput
+    - name: Relaod Nginx
+      run: sh ./reload_nginx.sh
         
           
 
