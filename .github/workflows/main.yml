@@ -46,9 +46,9 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+    #  run: |
+    # python -m pip install --upgrade pip
+      run: ./ home/coglescode/venv/bin/pip install -r /home/coglescode/coglescode_com/requirements.txt
     #- name: Run Tests
     #  run: |
     #    python manage.py test
