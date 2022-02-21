@@ -32,7 +32,7 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           
           # will put all file under this path
-          local_path: ./* # default is ./*
+          #local_path: ./* # default is ./*
           # local_path: ./ /home/coglescode/venv          
           # files will copy to under remote_path
           remote_path: /home/coglescode/coglescode_com          
@@ -47,13 +47,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
-        python-version: ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        working-directory: /home/coglescode/venv/bin/
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
-    #  run: ./ home/coglescode/venv/bin/pip install -r /home/coglescode/coglescode_com/requirements.txt
     #- name: Run Tests
     #  run: |
     #    python manage.py test
