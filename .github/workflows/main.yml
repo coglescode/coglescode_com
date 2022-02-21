@@ -32,7 +32,8 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           
           # will put all file under this path
-          local_path: ./* # default is ./*
+          # local_path: ./* # default is ./*
+          local_path: /home/coglescode/venv          
           # files will copy to under remote_path
           remote_path: /home/coglescode/coglescode_com          
           
