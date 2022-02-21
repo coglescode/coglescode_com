@@ -33,7 +33,7 @@ jobs:
           
           # will put all file under this path
           #local_path: ./* # default is ./*
-          # local_path: ./ /home/coglescode/venv          
+           
           # files will copy to under remote_path
           remote_path: /home/coglescode/coglescode_com          
           
@@ -49,8 +49,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        env:
-          pythonLocation: /home/coglescode/venv/bin/python3.9
+       
     #- name: Run Tests
     #  run: |
     #    python manage.py test
