@@ -55,8 +55,4 @@ jobs:
     #- name: Collect Static
     #  run: |
     #    python manage.py collectstatic --noinput
-    - name: Relaod Nginx
-      run: sh ./reload_nginx.sh
-        
-          
-
+    
