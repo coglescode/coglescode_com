@@ -30,10 +30,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 
-ALLOWED_HOSTS = ['coglescode.com', 'www.coglescode.com']
+#ALLOWED_HOSTS = ['coglescode.com', 'www.coglescode.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -145,7 +146,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+"""
 # HTTPS Settings in setting.py
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
@@ -156,7 +157,7 @@ SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_SECONDS = 31563000
 SECURE_HSTS_RELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-
+"""
 
 # Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

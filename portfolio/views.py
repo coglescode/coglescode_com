@@ -30,5 +30,5 @@ class IndexView(FormView):
         form.send()
         return super().form_valid(form)
     
-class Aboutview(TemplateView):
+class AboutView(TemplateView):
     template_name = "portfolio/aboutme.html"
