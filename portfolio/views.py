@@ -17,7 +17,7 @@ class IndexView(FormView):
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         # context['profile'] = UserIntro.objects.all()
-        # Passing different objects from different models with one context
+        # Passing different objects from different models in one context
         # Passing listview objects in same template
         context.update({
             'profile': UserIntro.objects.all(),
@@ -30,31 +30,5 @@ class IndexView(FormView):
         form.send()
         return super().form_valid(form)
     
-    
-
-    
-
-
-"""class ContactFormView(FormView, View):
-  #model = Contact
-  form_class = ContactForm
-  context_object_name = 'form'
-  template_name = 'portfolio/index.html'
-  success_url = '/'
-
-  def form_valid(self, form):
-      form.save()
-      #form.send_email()
-      return super().form_valid(form)
-
-
-class ProjectListView(ListView, TemplateResponseMixin):
-  model = Project
-  #context_object_name = 'my_projects'
-  template_name = 'portfolio/index.html'
-
-  def get_context_data(self, **kwargs):
-      context = super(ProjectListView, self).get_context_data(**kwargs)
-      context['my_projects'] = Project.objects.all() 
-      return context 
-"""
+class Aboutview(TemplateView):
+    template_name = "portfolio/aboutme.html"
