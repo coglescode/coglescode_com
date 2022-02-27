@@ -32,7 +32,7 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           
           # will put all file under this path
-          local_path: ./* # default is ./*
+          local_path: ./* # default is ./*           
           # files will copy to under remote_path
           remote_path: /home/coglescode/coglescode_com          
           
@@ -48,14 +48,11 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run Tests
-      run: |
-        python manage.py test
-    - name: Collect Static
-      run: |
-        python manage.py collectstatic --noinput
-    - name: Relaod Nginx
-      run: sh ./reload_nginx.sh
-        
-          
-
+       
+    #- name: Run Tests
+    #  run: |
+    #    python manage.py test
+    #- name: Collect Static
+    #  run: |
+    #    python manage.py collectstatic --noinput
+    
