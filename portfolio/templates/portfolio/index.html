@@ -37,13 +37,13 @@
   </div>
 
   <div id="project_list" class="container-fluid d-flex flex-wrap justify-content-center">  
-    <div class="col-12 text-center h1 mt-5">My Projects</div>
+    <div class="header col-12 text-center h1 mt-5">My Projects</div>
     {% if my_projects %}      
         {% for project in my_projects %}
           <div class="col-8 ">
             <a class="text-light text-decoration-none" href="https://github.com/coglescode/coglescode_com">
               <img class="img-fluid rounded shadow-lg text-decoration-none" src="{{project.img.url}}">
-              <h2 class="text-center my-3 ">{{project.title}}</h2>
+              <h2 class=" header text-center my-3 ">{{project.title}}</h2>
               <p class="text-center ">{{project.descr}}</p>
             </a>
           </div>
@@ -60,7 +60,7 @@
   <div class="container">
     <div class="row justify-content-center  ">
       <div class=" col-md-6 col-xl-5  ">        
-        <div class="text-center text-md-start my-4 h1">Contact</div>
+        <div class="header text-center text-md-start my-4 h1">Contact</div>
         <p class="mx-2 m-xl-0 text-md-start h5">Let's get your idea come true or just say hello.</p>        
         <div id="contact_links" class="d-flex flex-wrap justify-content-around justify-content-xl-start  my-5">
           <a href="https://www.instagram.com/coglescode/"><i class="bi bi-instagram"></i></a>
