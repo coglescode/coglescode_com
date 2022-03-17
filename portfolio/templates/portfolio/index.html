@@ -3,22 +3,22 @@
 
 
 
-{% block content %}
+{% block content %} 
   <div id="bio" class="container">
     {% for user in profile %}
       <div class="row d-flex justify-content-center ">        
-        <div id="avatar_div" class=" col-8 col-md-6 col-xl-4  d-flex justify-content-center align-items-center p-4 ">
+        <div id="avatar_div" class=" col-8 col-md-5 col-lg-4 col-xl-3  d-flex justify-content-center align-items-center p-4 ">
           <img class="img-fluid avatar" src="{{ user.avatar.url }}" alt="{{ user.name}}" width="800" height="600" >
         </div>
         <div id="bio_div" class="col-md-6 d-flex  flex-column justify-content-center p-3 "> 
-          <h1 class="col-12  text-center h4">{{user.intro_line}}</h1>
-          <h1  id="userName" class="col-12 display-4 text-center p-2 p-xl-0 my-xl-2">{{user.name}}</h1>
-          <p class="col-12 lead">{{user.descr}}</p>         
+          <h1 id="introLine" class="col-12  text-center fs-3">{{user.intro_line}}</h1>
+          <h1  id="userName" class="col-12 fs-4 text-center p-2 p-xl-0 my-xl-2">{{user.name}}</h1>
+          <p id="userDescr" class="col-12 lead mx-auto  lh-base ">{{user.descr}}</p>         
         </div>
       </div>
       
       <div class="row d-flex justify-content-center ">
-        <div id="cert_div" class="col-7 col-md-6 col-xl-4 d-flex justify-content-center align-items-center p-4 p-md-5 ">
+        <div id="cert_div" class="col-6 col-md-4 col-lg-4 col-xl-3 d-flex justify-content-center align-items-center p-4 p-md-5 ">
           <img id="cert" class="img-thumbnail shadow rounded " src="{{ user.cert.url }}" alt="{{ user.cert}}">    
         </div>  
 
@@ -49,8 +49,9 @@
           </div>
         {% endfor %}       
     {% else %}
-      <div class="py-4 justify-content-center ">
-        <p class="h3 p-3">This portfolio is my first project online. More will come.</p>
+      <div id="tmp_text" class="py-sm-4  justify-content-center ">
+        <p class="h3 lh-base p-3 ">This portfolio is my first project online. You can read the source code 
+          <a class="text-dark fw-bold" href="https://github.com/coglescode/coglescode_com">here</a>. More will come.</p>
       </div>
     {% endif %}
   </div>
@@ -61,7 +62,7 @@
     <div class="row justify-content-center  ">
       <div class=" col-md-6 col-xl-5  ">        
         <div class="header text-center text-md-start my-4 h1">Contact</div>
-        <p class="mx-2 m-xl-0 text-md-start h5">Let's get your idea come true or just say hello.</p>        
+        <p id="contact_descr" class="mx-2 m-xl-0 text-md-start lh-base h5">Let's get your idea come true or just say hello.</p>        
         <div id="contact_links" class="d-flex flex-wrap justify-content-around justify-content-xl-start  my-5">
           <a href="https://www.instagram.com/coglescode/"><i class="bi bi-instagram"></i></a>
           <a class="mx-xl-5" href="https://github.com/coglescode"><i class="bi bi-github"></i></a>
@@ -69,10 +70,10 @@
         </div>        
         <div class="row  justify-content-start gy-2 px-3 p-xl-0 my-3">
           <div class="col-md-12 h6 ">
-            <i class="bi bi-envelope-fill fs-4"><span class="p-2">cogles_bonne@yahoo.com</span></i>
+            <i class="bi bi-envelope-fill fs-4"><span class="email p-2">cogles_bonne@yahoo.com</span></i>
           </div>  
           <div class=" col-md-12 h6 ">
-            <i class="bi bi-phone-fill fs-4 "><span class="p-2">(+46)790133284</span></i>
+            <i class="bi bi-phone-fill fs-4 "><span class="mobile_number p-2">(+46)790133284</span></i>
           </div>
         </div>
       </div>  
@@ -91,8 +92,8 @@
 
   <div class="container">
     <div class="row">                 
-      <footer class="col-12 text-center  align-items-center p-3 ">
-        <h6>coglescode 2022</h6>
+      <footer class="col-12 text-center align-items-center pt-4">
+        <h6 >coglescode 2022</h6>
       </footer>         
     </div>
   </div>
