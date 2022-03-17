@@ -33,8 +33,8 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 
-#ALLOWED_HOSTS = ['coglescode.com', 'www.coglescode.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['coglescode.com', 'www.coglescode.com']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -90,8 +90,10 @@ WSGI_APPLICATION = 'coglescode_com.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfoliodb',
+        'USER': 'coglescode',
+        'PASSWORD': 'PORTFOLIO_db_pass'
     }
 }
 
@@ -146,7 +148,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-"""
+
 # HTTPS Settings in setting.py
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
@@ -157,7 +159,7 @@ SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_SECONDS = 31563000
 SECURE_HSTS_RELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-"""
+
 
 # Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
