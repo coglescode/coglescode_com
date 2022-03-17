@@ -1,26 +1,47 @@
-
+/******** Fonts Settings **********/
 #userName, .header {
-  font-family: Montserrat;
+  font-family: Montserrat Medium;
   font-size: 25px;
-  font-weight: 500;  
 }
 
+p, 
+#userDescr, 
+#introLine,
+#connect_btn,
+.email, 
+.mobile_number,
+footer,
+#carrier {
+  font-family:Roboto Light;
+  font-size: 20px;
+}
 
+#aboutMe,
+#introLine, 
+#userName,
+#tmp_text {
+  word-spacing: 0.4rem;
+  letter-spacing: 0.1rem;
+}
+
+#userDescr{
+  word-spacing: 0.4rem;
+  letter-spacing: 0.06rem;
+} 
+
+#userName, 
+#contact_descr{
+  word-spacing: 0.4rem;
+  letter-spacing: 0.05rem;
+}
+
+/****** Responsive Design *******/
 .avatar{
   border-radius: 50%; 
   object-fit: fill; 
-  /*
-  width: 100%;
-  height: auto;
-  */
 }
 
-/*
-#avatar_div, #cert_div{
-  width: 70%;
-  height: auto;
-}
-*/
+
 #contact_links a {
   font-size: 3rem;
   color: #000;
@@ -28,11 +49,7 @@
 
 #connect_btn:link, #connect_btn:visited{
   color: #FFFF;
-  /*
-  font-size: 1rem;
-  width: 214px;
-  height: 68px;
-  */
+
 }
 
 #project_list{  
@@ -43,28 +60,47 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  
+  #userDescr{
+    font-size: 22px;
+    word-spacing: 0.06rem;
+    
+  } 
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  /*
-  #avatar_div, #cert_div{
-    width: 50%;
-    height: auto;
-  }
-  */
+
   #userName {
     font-size: 2rem;
   }
 
+  #userDescr{
+    font-size: 23px;
+    word-spacing: 0.2rem;
+  }
+
+  #tmp_text {
+    word-spacing: 0.2rem;   
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { ... }
+@media (min-width: 992px) { 
+  #tmp_text {
+    word-spacing: 0.1rem;   
+  }
+ }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+
+  #aboutMe p {
+    font-size: 28px;
+  }
+
+  .header{
+    font-size: 40px;
+  }
 
 }
 
