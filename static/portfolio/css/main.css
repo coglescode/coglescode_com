@@ -1,0 +1,72 @@
+
+#userName, .header {
+  font-family: Montserrat;
+  font-size: 25px;
+  font-weight: 500;  
+}
+
+
+.avatar{
+  border-radius: 50%; 
+  object-fit: fill; 
+  /*
+  width: 100%;
+  height: auto;
+  */
+}
+
+/*
+#avatar_div, #cert_div{
+  width: 70%;
+  height: auto;
+}
+*/
+#contact_links a {
+  font-size: 3rem;
+  color: #000;
+}
+
+#connect_btn:link, #connect_btn:visited{
+  color: #FFFF;
+  /*
+  font-size: 1rem;
+  width: 214px;
+  height: 68px;
+  */
+}
+
+#project_list{  
+  background-color: #3D6CE5;
+  color: #FFFF;
+  height: 300px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /*
+  #avatar_div, #cert_div{
+    width: 50%;
+    height: auto;
+  }
+  */
+  #userName {
+    font-size: 2rem;
+  }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { ... }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { ... }
