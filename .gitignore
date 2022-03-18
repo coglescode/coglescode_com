@@ -2,4 +2,8 @@
 .vscode
 db.sqlite3
 media/
+<<<<<<< HEAD
 coglescode_com/settings.py
+=======
+coglescode_com/settings.py
+>>>>>>> draft
