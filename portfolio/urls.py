@@ -1,12 +1,10 @@
-from django.urls import re_path, path
+from django.urls import path
 from . import views
+#from portfolio.views import IndexView
 
-from portfolio.views import IndexView
+#app_name  = 'portfolio'
 
 urlpatterns = [
   path('', views.IndexView.as_view(), name='index'),
-  path('aboutme/', views.AboutView.as_view(), name='aboutme')
-  #path('projects/<str:title>', views.ProjectListView.as_view(), name='projects')
-  #path('contact/', views.ContactFormView.as_view(), name='contact'),
-  
+  path('aboutme/', views.AboutView.as_view(), name='aboutme'),
 ]
