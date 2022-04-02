@@ -5,3 +5,16 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Removes the header on post details
+  addHeader();
+
+});
+
+function addHeader() {
+  let header = document.getElementsByTagName("header")[0];
+  header.style.display = "block";
+
+}
