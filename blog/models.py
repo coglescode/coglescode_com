@@ -1,13 +1,18 @@
+import email
+from email.quoprimime import body_check
+from tkinter import CASCADE
+from unicodedata import name
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
-# Create your models here.
-"""
-class User(AbstractUser):
-    pass
+from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 
-"""
+
+
+# Create your models here.
+
 class PublishedManager(models.Manager):
   def get_queryset(self):
     return super(PublishedManager, self).get_queryset().filter(status='published')
@@ -19,10 +24,11 @@ class Post(models.Model):
     ('published', 'Published'),
   )
 
+  headimg = models.ImageField(upload_to='images', blank=True)
   title = models.CharField(max_length=250)
   slug = models.SlugField(max_length=250, unique_for_date='publish')
   author = models.ForeignKey(User, related_name='blog_posts', on_delete=models.CASCADE,)
-  body = models.TextField()
+  body = CKEditor5Field('Text', config_name='extends')
   publish = models.DateTimeField(default=timezone.now)
   created = models.DateTimeField(auto_now_add=True)
   updated = models.DateTimeField(auto_now=True)
@@ -41,3 +47,18 @@ class Post(models.Model):
                                               self.publish.month, 
                                               self.publish.day, 
                                               self.slug])
+
+class Comment(models.Model):
+  post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+  name = models.CharField(max_length=80)
+  email = models.EmailField()
+  body = models.TextField()
+  created = models.DateTimeField(auto_now_add=True)
+  updated = models.DateTimeField(auto_now=True)
+  active = models.BooleanField(default=True)
+
+  class Meta:
+    ordering = ('-created',)
+
+  def __str__(self):
+      return f'Comment by {self.name} on {self.post}'
