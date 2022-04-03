@@ -14,7 +14,7 @@ class ContactForm(ModelForm):
                   'name':forms.TextInput(attrs={'placeholder': 'Name'}),
                   'email':forms.TextInput(attrs={'placeholder': 'Email'}),
                   'subject':forms.TextInput(attrs={'placeholder': 'Subject'}),
-                  'msg':forms.Textarea(attrs={'rows':3, 'placeholder': 'Your message goes here ...'}),
+                  'msg':forms.Textarea(attrs={'rows':4, 'placeholder': 'Your message goes here ...'}),
             }
 
             """
