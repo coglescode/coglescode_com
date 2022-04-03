@@ -1,6 +1,5 @@
-.env
+settings.ini
 .vscode
-db.sqlite3
 media/
 <<<<<<< HEAD
 coglescode_com/settings.py

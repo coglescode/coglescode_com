@@ -12,7 +12,7 @@ from django.core.mail import send_mail
 class IndexView(FormView):
     template_name = 'portfolio/index.html'
     form_class = ContactForm
-    success_url = '/'
+    success_url = 'portfolio/index.html'
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
