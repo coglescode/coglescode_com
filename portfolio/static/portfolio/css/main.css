@@ -1,5 +1,5 @@
 /******** Fonts Settings **********/
-#userName, .header {
+#userName, .header, #post_title {
   font-family: Montserrat Medium;
   font-size: 25px;
 }
@@ -138,6 +138,10 @@ footer,
   background-color: #3D6CE5;
   color: #FFFF;
   height: 300px;
+}
+
+nav, footer{
+  background-color: #3D6CE5;
 }
 
 /* Small devices (landscape phones, 576px and up) */
