@@ -1,7 +1,4 @@
 import email
-from email.quoprimime import body_check
-from tkinter import CASCADE
-from unicodedata import name
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
