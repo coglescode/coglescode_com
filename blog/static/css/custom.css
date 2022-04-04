@@ -1,0 +1,17 @@
+pre {
+  background-color: darkslategray;
+  color: rgb(250, 234, 214);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#post_title { 
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+section {
+  font-size: 20px;
+  word-spacing: 0.1rem;
+  letter-spacing: 0.03rem;
+}
