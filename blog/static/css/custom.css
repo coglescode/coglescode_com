@@ -15,3 +15,15 @@ section {
   word-spacing: 0.1rem;
   letter-spacing: 0.03rem;
 }
+
+nav, footer{
+  background-color: #3D6CE5;
+}
+
+
+.post_block{
+  width: 392px;
+  height: 300px;
+}
+
+
