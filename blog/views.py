@@ -47,7 +47,6 @@ def post_detail(request, year, month, day, post):
             new_comment.post = post
             # Save the comment 
             new_comment.save()
-            comment_form = CommentForm()            
     else: 
         comment_form = CommentForm()   
           
@@ -61,7 +60,7 @@ def post_detail(request, year, month, day, post):
             'post': post,
             'comments': comments,
             'comment_form': CommentForm()
-        })
+    })
 
 
 

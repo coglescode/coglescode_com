@@ -14,15 +14,15 @@
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles_list.css' %}" rel="stylesheet" />
-        <link href="{% static 'css/custom_detail.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
 
     </head>
     <body>
         <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-lg navbar  ">
                 <a class="brand navbar-brand text-light ml-md-5 font-weight-bold" href="{% url 'blog:post_list' %}">LCB_blog</a>
                 <a href="javascript:void(0);" class="navbar-toggler border-0 text-light" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,6 +63,7 @@
             <div class="row justify-content-end">
                 <div class="col-lg-8">
                     {% block content %}
+                        
                     {% endblock %}  
                     
                     {% block script %}
@@ -82,7 +83,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <!-- Categories widget-->
+                    <!-- Categories widget
                     <div class="card my-5">
                         <div class="card-header">Categories</div>
                         <div class="card-body">
@@ -104,23 +105,27 @@
                             </div>
                         </div>
                     </div>
+                    -->
                     <!-- Side widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Side Widget</div>
-                        <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+                    <div class="mb-4 text-center py-5" >
+                        <!-- div class="card-header">Side Widget</div -->
+                        <a href="https://namecheap.pxf.io/vngAGd">
+                            <img class="img-fluid " src="/static/assets/ads/2021_DP_compromo_ad_300x250.png"   alt="namecheap domain offer">
+                        </a>
+                        <!-- div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div -->
                     </div>
                 </div>                                
             </div>
         </div>
 
-        
+ 
                
        
-
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-          <div class="container"><p class="m-0 text-center text-white">Copyright &copy; coglescode.com 2022</p></div>
-        </footer>
+        <footer class="py-5 ">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; coglescode.com 2022</p></div>
+          </footer>
+        
+        
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
