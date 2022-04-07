@@ -5,12 +5,12 @@
 {% block content %}
     
     <!-- Page content-->
-    <div class="container">
+    
         <div class="row">
             {% for post in posts %}
-                <div id="" class=" col-lg-6">
+                <div class="col-lg-6 ">
                     <!-- Blog post-->                
-                    <div class="post_block card shadow-sm mb-4">                    
+                    <div class="post_block card mb-4 shadow-sm ">                    
                         <a href="{{ post.get_absolute_url }}">
                             {% if post.headimg %}
                                 <img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." />
@@ -19,7 +19,7 @@
                         <div class="card-body">
                             <a id="post_title" class="fw-bold" href="{{ post.get_absolute_url }}">{{post.title}}</a> 
                             <div class="small text-muted">Published {{ post.publish }}</div>                                                        
-                            <p class="card-text">{{ post.body|safe|truncatewords:20|linebreaks }}</p>
+                            <p class="card-text">{{ post.body|safe|truncatewords:30|linebreaks }}</p>
                             
                         </div>
                         <div class="m-3">
@@ -28,8 +28,10 @@
 
                     </div>                
                 </div>
+                <!-- a href="https://coglescode.com/blog">Blog link</a -->
             {% endfor %}
-
+            
+            {% include "blog/post/pagination.html" with page=posts %}
             <!--
             <nav aria-label="Pagination">
                 <hr class="my-0" />
@@ -44,11 +46,12 @@
                 </ul>
             </nav>
             -->
-        </div>
-    </div>     
-        <!-- Pagination-->
-    {% include "blog/post/pagination.html" with page=posts %}  
+             
     
+        </div>
+      
+        <!-- Pagination-->
+   
        
 {% endblock %}  
     
