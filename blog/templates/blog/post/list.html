@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-12">
             <!-- Featured blog post-->
-                    <div class="card mb-5 shadow">
+                    <div class="card mb-5 mt-lg-3 shadow">
                        {% if featured_post %}
                             {% if post.headimg %}
                                 <a href="{{ featured_post.get_absolute_url}}">
@@ -40,22 +40,19 @@
                                 <img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." />
                             </a>
                         {% endif %}
-
                         <div class="card-body">
-                            <a id="post_title" class="fw-bold" href="{{ post.get_absolute_url }}">{{post.title}}</a> 
-                            <div class="small text-muted">Published {{ post.publish }}</div>                                                        
-                            <p class="card-text">{{ post.body|safe|truncatewords:30|linebreaks }}</p>
-                            
+                            <a id="post_title" class="fw-bold" href="{{ post.get_absolute_url }}">{{post.title}}</a>
+                            <div class="small text-muted">Published {{ post.publish }}</div>
+                            <p class="card-text">{{ post.body|safe|truncatewords:25|linebreaks }}</p>
                         </div>
                         <div class="m-3">
-                            <a class="btn btn-primary" href="{{ post.get_absolute_url }}">Read more →</a>                    
-                        </div>  
-
-                    </div>                
+                            <a class="btn btn-primary" href="{{ post.get_absolute_url }}">Read more →</a>
+                        </div>
+                    </div>
                 </div>
                 <!-- a href="https://coglescode.com/blog">Blog link</a -->
             {% endfor %}
-            
+
             {% include "blog/post/pagination.html" with page=posts %}
             <!--
             <nav aria-label="Pagination">

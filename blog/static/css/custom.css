@@ -26,15 +26,17 @@ figure{
   margin: 0;
 }
 
-{
-  width: 100%;
-  height: auto;
-}
 
 @media (min-width: 992px) { 
   .post_block{
-    width: 416px;
-    height: 350px;
-  
+    width: 300x;
+    height: 360px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .post_block{
+    width: 300x;
+    height: 310px;
   }
 }
