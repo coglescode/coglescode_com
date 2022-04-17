@@ -1,0 +1,47 @@
+/*** Code blocks ***/
+pre {
+  background-color: darkslategray;
+  color: rgb(250, 234, 214);
+  padding: 10px;
+  border-radius: 5px;
+}
+/****************/
+
+#post_title { 
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+section {
+  font-size: 20px;
+  word-spacing: 0.1rem;
+  letter-spacing: 0.03rem;
+}
+
+nav, footer{
+  background-color: #3D6CE5;
+}
+
+figure{
+  margin: 0;
+}
+
+
+@media (min-width: 992px) { 
+  .post_block{
+    width: 300x;
+    height: 360px;
+  }
+
+  img{
+      width: 100%;
+      height: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .post_block{
+    width: 300x;
+    height: 310px;
+  }
+}
