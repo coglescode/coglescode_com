@@ -1,9 +1,11 @@
+/*** Code blocks ***/
 pre {
   background-color: darkslategray;
   color: rgb(250, 234, 214);
   padding: 10px;
   border-radius: 5px;
 }
+/****************/
 
 #post_title { 
   font-size: 25px;
@@ -24,15 +26,22 @@ figure{
   margin: 0;
 }
 
-img{
-  width: 100%;
-  height: auto;
-}
 
 @media (min-width: 992px) { 
   .post_block{
-    width: 416px;
-    height: 350px;
-  
+    width: 300x;
+    height: 360px;
+  }
+
+  img{
+      width: 100%;
+      height: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .post_block{
+    width: 300x;
+    height: 310px;
   }
 }
