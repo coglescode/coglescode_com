@@ -32,6 +32,11 @@ figure{
     width: 300x;
     height: 360px;
   }
+
+  img{
+      width: 100%;
+      height: auto;
+  }
 }
 
 @media (min-width: 1200px) {
