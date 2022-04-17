@@ -3,3 +3,7 @@ settings.ini
 media/
 coglescode_com/settings.py
 .idea/
+blog/migrations/__pycache__
+portfolio/migrations/__pycache__
+portfolio/__pycache__
+blog/__pycache__
