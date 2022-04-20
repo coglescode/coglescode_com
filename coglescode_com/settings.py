@@ -46,12 +46,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
     'portfolio.apps.PortfolioConfig',
     'blog.apps.BlogConfig',
     'django_ckeditor_5',
     'ckeditor',
     'crispy_forms',    
 ]
+
+# SITE_ID Settings
+SITE_ID = 1
 
 # Indicates the frontend framework django crispy forms use
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -64,7 +69,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'coglescode_com.urls'

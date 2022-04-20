@@ -8,13 +8,12 @@ from blog.forms import CommentForm
 
 # Retrieve a list of all posts
 # Pagination function retrieves only 4 posts by page
+
 def post_list(request):
     posts = Post.published.all()
     # Get the latest post
     featured_post = posts.earliest()
     posts_list = posts.exclude(publish__exact=featured_post.publish)
-
-    print(posts_list)
 
     paginator = Paginator(posts_list, 4)
     page = request.GET.get('page')
