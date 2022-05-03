@@ -179,4 +179,3 @@ RECIPIENT_ADDRESS = config('RECIPIENT_ADDRESS')
 
 # Django-ckeditor settings
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
-
