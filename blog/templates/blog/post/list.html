@@ -43,7 +43,7 @@
                         <div class="card-body">
                             <a id="post_title" class="fw-bold" href="{{ post.get_absolute_url }}">{{post.title}}</a>
                             <div class="small text-muted">Published {{ post.publish }}</div>
-                            <p class="card-text">{{ post.body|safe|truncatewords:25|linebreaks }}</p>
+                            <p class="card-text">{{ post.body|safe|truncatewords:20|linebreaks }}</p>
                         </div>
                         <div class="m-3">
                             <a class="btn btn-primary" href="{{ post.get_absolute_url }}">Read more →</a>

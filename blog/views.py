@@ -10,9 +10,12 @@ from blog.forms import CommentForm
 # Pagination function retrieves only 4 posts by page
 
 def post_list(request):
+    # Retrieves a list of all published posts
     posts = Post.published.all()
-    # Get the latest post
+    # Get the latest post from the list of posts
     featured_post = posts.earliest()
+    # Create a new list of posts excluding the latest post
+    # This new list becomes the one to be rendered in the template
     posts_list = posts.exclude(publish__exact=featured_post.publish)
 
     paginator = Paginator(posts_list, 4)
@@ -24,10 +27,11 @@ def post_list(request):
         posts = paginator.page(1)
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
+
     return render(request, 'blog/post/list.html', {
-        'posts': posts,
-        'page': page,
-        'featured_post': featured_post,
+            'posts': posts,
+            'page': page,
+            'featured_post': featured_post,
     })
 
 
