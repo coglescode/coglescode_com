@@ -3,11 +3,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.models import Post, Comment
 from blog.forms import CommentForm
 
-
 # Create your views here.
 
-# Retrieve a list of all posts
-# Pagination function retrieves only 4 posts by page
 
 def post_list(request):
     # Retrieves a list of all published posts
@@ -72,3 +69,5 @@ def post_detail(request, year, month, day, post):
         'comments': comments,
         'comment_form': CommentForm()
     })
+
+

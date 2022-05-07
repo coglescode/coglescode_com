@@ -4,7 +4,6 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from ckeditor.fields import RichTextField
-from django_ckeditor_5.fields import CKEditor5Field
 
 
 # Create your models here.
