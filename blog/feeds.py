@@ -5,7 +5,7 @@ from django.urls import reverse
 
 class LatestPostFeed(Feed):
     title = "Blog feed"
-    link = ""
+    link = "https://coglescode.com/blog/"
     description = "Updates on blog posts"
     # description_template = "post/articles.html"
 
@@ -18,5 +18,7 @@ class LatestPostFeed(Feed):
     def item_description(self, item):
         return item.title
 
-
+    def item_link(self, item):
+        return "https://coglescode.com/blog/"+str(post.title)
+        
 
