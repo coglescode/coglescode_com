@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
     'blog.apps.BlogConfig',
     'ckeditor',
-    'crispy_forms',    
+    'crispy_forms',
+    'taggit',
 ]
 
 # SITE_ID Settings
