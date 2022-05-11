@@ -1,12 +1,16 @@
+from turtle import pos
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.test import tag
 from blog.models import Post, Comment
 from blog.forms import CommentForm
+from taggit.models import Tag
+from django.db.models import Count
 
 # Create your views here.
 
 
-def post_list(request):
+def post_list(request, tag_slug=None):
     # Retrieves a list of all published posts
     posts = Post.published.all()
     # Get the latest post from the list of posts
@@ -14,6 +18,12 @@ def post_list(request):
     # Create a new list of posts excluding the latest post
     # This new list becomes the one to be rendered in the template
     posts_list = posts.exclude(publish__exact=featured_post.publish)
+
+    tag = None
+
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        posts_list = posts_list.filter(tags__in=[tag])
 
     paginator = Paginator(posts_list, 4)
     page = request.GET.get('page')
@@ -29,6 +39,7 @@ def post_list(request):
             'posts': posts,
             'page': page,
             'featured_post': featured_post,
+            'tag': tag,
     })
 
 
