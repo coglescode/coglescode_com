@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from ckeditor.fields import RichTextField
-from taggit.managers import TaggableManager
+from taggit.managers import TaggableManager 
 
 
 # Create your models here.

@@ -15,6 +15,7 @@
                         <header class="mb-4">
                             <!-- Post title -->
                             <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
+                            
                             <!-- Post meta content -->
                             <div class="text-muted fst-italic mb-2">Published {{ post.publish }} </div>
                             <!-- Post categories
@@ -33,6 +34,16 @@
                             <p class=" mb-4">{{ post.body|safe|linebreaks }}</p>                            
                         </section>               
                     </article>
+
+                    <!-- Similar Posts-->
+                    <h2>Similar posts </h2>
+                    {% for post in similar_posts %}
+                        <p>
+                            <a href="{{ post.get_absolute_url }}">{{ post.title}}</a>
+                        </p>
+                    {% empty %}
+                        There are no similar posts yet.
+                    {% endfor%}
 
                     <!-- Comments section -->
                     <section class="mb-5">
