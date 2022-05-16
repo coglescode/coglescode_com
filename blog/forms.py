@@ -20,3 +20,6 @@ class CommentForm(forms.ModelForm):
             for field_name, field in self.fields.items():
                   field.widget.attrs['class'] = 'form-control shadow-sm'
                   field.label = ''
+
+class SearchForm(forms.Form):
+  query = forms.CharField()
