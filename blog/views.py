@@ -103,5 +103,5 @@ def post_search(request):
     return render(request, 'blog/post/search.html', {
         'search_form': form,
         'query': query,
-        'results': results
+        'results': results,
     })

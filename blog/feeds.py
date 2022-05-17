@@ -1,12 +1,14 @@
+import imp
+from os import truncate
 from django.contrib.syndication.views import Feed
 from blog.models import Post
-from django.urls import reverse
-
+from django.urls import reverse_lazy
+from django.template.defaultfilters import truncatewords
 
 class LatestPostFeed(Feed):
     title = "Blog feed"
-    link = ""
-    description = "Updates on blog posts"
+    link = reverse_lazy('blog:post_list')
+    description = "New posts on my blog."
     # description_template = "post/articles.html"
 
     def items(self):
@@ -16,7 +18,7 @@ class LatestPostFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        return item.title
+        return truncatewords(item.body, 30)
 
 
 
