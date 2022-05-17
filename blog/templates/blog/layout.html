@@ -1,3 +1,4 @@
+{% load blog_tags %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -64,17 +65,41 @@
                     {% endblock %}
                 </div>
 
+                <!-- Right Column Section-->
                 <div class="col-lg-4 ">
-                    <!-- Search widget
+                    <!-- Side widget-->
+                    <div class=" p-3 pb-lg-0 mb-4 text-center ">
+                        <!-- div class="card-header">Side Widget</div -->
+                        <a href="https://namecheap.pxf.io/kjPxDz">
+                            <img class="img-fluid " src="/static/blog/assets/ads/2021_DP_compromo_ad_300x250.png"   alt="namecheap domain offer">
+                        </a>
+                        <!-- div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div -->
+                    </div>
+
+                    <!-- Search widget 
                     <div class="card mb-4">
-                        <div class="card-header">Search</div>
-                        <div class="card-body">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                                <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-                            </div>
+                        <div class="card-header">Search posts</div>
+                        <div class="card-body">                                                       
                         </div>
-                    </div> -->
+                    </div>-->
+                    <div><p>This blog has {% total_posts %} written so far.</p></div>
+                    <p> 
+                        <a href="{% url 'blog:post_feed' %}"> Subscribe to my RSS feed.</a>
+                    </p>
+                    <h3>Latest posts</h3>
+                    {% show_latest_posts 3 %}
+                    <!--
+                    <h3>Most commented posts</h3>
+                    {% get_most_commented_posts as most_commented_posts %}
+                        <ul>
+                            {% for post in most_commented_posts %}
+                                <li>
+                                    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    -->
+                    
                     <!-- Categories widget
                     <div class="card my-5">
                         <div class="card-header">Categories</div>
@@ -98,14 +123,7 @@
                         </div>
                     </div>
                     -->
-                    <!-- Side widget-->
-                    <div class=" p-3 pb-lg-0 mb-4 text-center ">
-                        <!-- div class="card-header">Side Widget</div -->
-                        <a href="https://namecheap.pxf.io/kjPxDz">
-                            <img class="img-fluid " src="/static/blog/assets/ads/2021_DP_compromo_ad_300x250.png"   alt="namecheap domain offer">
-                        </a>
-                        <!-- div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div -->
-                    </div>
+                    
                 </div>
             </div>
         </div>
