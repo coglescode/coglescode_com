@@ -28,8 +28,7 @@ jobs:
       with:
           username: coglescode
           server: coglescode.com
-          port: 22 
-          # ${{ secrets.SSH_PORT }}
+          port: ${{ secrets.SSH_PORT }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           
           # will put all file under this path
