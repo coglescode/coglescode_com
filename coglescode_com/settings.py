@@ -47,10 +47,20 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'portfolio.apps.PortfolioConfig',
     'blog.apps.BlogConfig',
+    'links',
     'ckeditor',
     'crispy_forms',
     'taggit',
+    'rest_framework',
 ]
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 # SITE_ID Settings
 SITE_ID = 1
