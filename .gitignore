@@ -1,10 +1,10 @@
 settings.ini
 .vscode
 media/
-coglescode_com/settings.py
 .idea/
 blog/migrations/__pycache__
 portfolio/migrations/__pycache__
 portfolio/__pycache__
 blog/__pycache__
 coglescode_com/__pycache__/
+

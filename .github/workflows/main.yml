@@ -28,7 +28,8 @@ jobs:
       with:
           username: coglescode
           server: coglescode.com
-          port: 22 # default is 22
+          port: 38504 
+          # ${{ secrets.SSH_PORT }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           
           # will put all file under this path
