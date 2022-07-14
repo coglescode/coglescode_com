@@ -30,7 +30,8 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 
-ALLOWED_HOSTS = ['coglescode.com', 'www.coglescode.com']
+#ALLOWED_HOSTS = ['coglescode.com', 'www.coglescode.com', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -46,10 +47,20 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'portfolio.apps.PortfolioConfig',
     'blog.apps.BlogConfig',
+    'links',
     'ckeditor',
     'crispy_forms',
     'taggit',
+    'rest_framework',
 ]
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 # SITE_ID Settings
 SITE_ID = 1
@@ -153,7 +164,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+"""
 # HTTPS Settings in setting.py
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
@@ -164,7 +175,7 @@ SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_SECONDS = 31563000
 SECURE_HSTS_RELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-
+"""
 
 # Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
